@@ -1,0 +1,66 @@
+<HEAD>
+	<LINK href="cursor.css" rel="stylesheet" type="text/css">
+	<LINK href="triple_town_clone.css" rel="stylesheet" type="text/css">
+	<SCRIPT type="text/javascript" src=../lib/jquery.js></SCRIPT>
+	<SCRIPT type="text/javascript" src="settings.js"></SCRIPT>
+	<SCRIPT type="text/javascript" src="Cell.js"></SCRIPT>
+	<SCRIPT type="text/javascript" src="SwapCell.js"></SCRIPT>
+	<SCRIPT type="text/javascript" src="Pieces.js"></SCRIPT>
+	<SCRIPT type="text/javascript" src="triple_town_clone.js"></SCRIPT>
+	<style>
+		.rules{background-color:#D8D8FF;width:500px;float:left;border:solid #CCC 1px}
+		H1 {font-weight:bold;margin:5px;text-align:center;font-size:2em;}
+		UL.rule_list{padding:0px;}
+		UL.rule_list LI{margin:2px;padding:3px;border:solid #AAA 1px;background-color:#E8E8FF;text-indent:10px;}
+		UL.rule_list LI img{ width:32px;}
+		UL.rule_list LI OL LI{border:0;}
+		UL.rule_list LI OL LI img{width:16px;}
+		#game_container{position:fixed !important;}
+	</style>
+</HEAD>
+<BODY>
+	<div class=rules>
+		<h1> RULES: </h1>
+		<UL class=rule_list>
+			<LI>Triple Town clone is a matching set game, where matches of 3 or more same type get grouped into a single object of the next level. Objects are consider for matching if they are above/below/left/right of each other. Objective of the game is to get as high of a score as possible before you run out of places to move
+			<LI>The Peach square is a swap square, it acts a placeholder. If no item is in the peach square, when clicked, your current item will be placed inside and a new piece will be generated. If a piece is inside the swap square, when clicked, you current piece will be placed in the swap square and your piece in the swap square will become your active piece
+			<LI>Points are given based on each piece that is placed, matches made, number of items in a made match, and the level of the piece played/match created
+			<LI>This game is in demo mode, pressing keys 1-9 will give you the piece to that corresponding level, i.e. level 1 piece is a grass so pressing the 1 key will make the active piece a grass, 2 is a bush so pressing 2 will make a bush and so on. Pressing 0 will make the game board larger
+			<LI>Match Levels
+				<OL>
+					<LI> <s class="sprite G" ></s> + <s class="sprite G.png> + <img src=letters/G"></s> = <s class="sprite B" ></s>  <i> Three grasses make a bush
+					<LI> <s class="sprite B" ></s> + <s class="sprite B"></s> + <s class="sprite B"></s> = <s class="sprite T" ></s>  <i> Three bushes make a tree
+					<LI> <s class="sprite T" ></s> + <s class="sprite T"></s> + <s class="sprite T"></s> = <s class="sprite hh" ></s>  <i> Three trees make a hut
+					<LI> <s class="sprite hh" ></s> + <s class="sprite hh"></s> + <s class="sprite hh"></s> = <s class="sprite H" ></s>  <i> Three huts make a house
+					<LI> <s class="sprite h" ></s> + <s class="sprite H"></s> + <s class="sprite H"></s> = <s class="sprite M" ></s>  <i> Three houses make a mansion
+					<LI> <s class="sprite m" ></s> + <s class="sprite M"></s> + <s class="sprite M"></s> = <s class="sprite C" ></s>  <i> Three mansions make a castle
+					<LI> <s class="sprite c" ></s> + <s class="sprite C"></s> + <s class="sprite C"></s> = <s class="sprite F" ></s>  <i> Three castles make a fortress
+					<LI> <s class="sprite f" ></s> + <s class="sprite F"></s> + <s class="sprite F"></s> + <s class="sprite F"></s> = <s class="sprite U" ></s>  <i> Four fortresses make an ultimate fortress
+					<LI> <s class="sprite ts" ></s> + <s class="sprite TS"></s> + <s class="sprite TS"></s> = <s class="sprite sc" ></s>  <i>Three tombstones make a church
+					<LI> <s class="sprite sc" ></s> + <s class="sprite sc"></s> + <s class="sprite sc"></s> = <s class="sprite cc" ></s>  <i>Three churches make a cathedral
+					<LI> <s class="sprite cc" ></s> + <s class="sprite CC"></s> + <s class="sprite CC"></s> = <s class="sprite small_chest" ></s> three cathedrals make a small chest
+					<LI> <s class="sprite rock" ></s> + <s class="sprite rock"></s> + <s class="sprite rock"></s> = <s class="sprite mountain" ></s> three bolders make a mountain
+					<LI> <s class="sprite mountain" ></s> + <s class="sprite mountain"></s> + <s class="sprite mountain"></s> = <s class="sprite large_chest" ></s> three mountains make a large chest
+				</ol>
+			<LI><s class="sprite soldier"></s> can move up/down/left/right into an open square. If they cannot move they become a <s class="sprite TS"></s>
+			<LI><s class="sprite flying"></s>can move into any open space
+	</div>
+	<DIV id=game_container>
+		<DIV id=end_game style=display:none;>
+			GAME&nbsp;OVER
+		</DIV>
+		<DIV id=head>
+			<DIV id=title>
+			</DIV>
+			<DIV id=score></DIV>
+		</DIV>
+		<DIV id=play_area>
+			<DIV cellpadding=0 cellspacing=0 id=game_board>
+				<DIV id=hover_piece></DIV>
+			</DIV>
+		</DIV>
+		</DIV id=foot>
+		</DIV>
+	</DIV>
+	<script>initGame();endGame();</script>
+</BODY>

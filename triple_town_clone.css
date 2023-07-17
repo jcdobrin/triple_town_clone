@@ -1,0 +1,91 @@
+body {
+	font-family:sans-serif;
+}
+DIV#game_container{
+	margin-left:100px;
+	margin-top:20px;
+	display:inline-block;
+	padding:10px;
+	background-color:#CCC;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border-radius: 15px;
+	position:relative;
+	box-shadow: 10px 10px 15px #888888;
+	}
+
+	DIV#score{
+		margin-top:20px;
+		background-color:#000;
+		color:#FFF;
+		height:25px;
+		line-height:25px;
+		border-radius: 5px;
+		padding:0px 5px;
+		text-align:right;
+	}
+
+	DIV#end_game{
+		position:absolute;
+		top:50%;
+		width:100%;
+		text-align:center;
+		font-size:32px;
+		z-index:1000;
+		left:0;
+		background-color:rgba(255, 255, 255, 0.75);
+	}
+	DIV#hover_piece{
+		position:absolute;
+		left:0px;
+		top:0px;
+		opacity:0.6;
+		filter:alpha(opacity=70); /* For IE8 and earlier */
+		background-color:#CCC;
+		display:none;
+		border-radius: 5px;
+		border:solid black 1px;
+		z-index:5000;
+	}
+
+	DIV#head{height:100px;}
+	DIV#game_board{
+	border-left:solid #DDD 2px;
+	border-top:solid #DDD 2px;
+	border-right:solid #FFF 2px;
+	border-bottom:solid #FFF 2px;
+	border-collapse:collapse;background-color:#EEE;
+	position:relative;
+	}
+	DIV.cell {padding:0px;margin:0px;}
+	TD.highlight { background-color:#CCFFCC;}
+	DIV#title{font-size:12px;font-family:sans-serif;width:100%;text-align:center !important;font-weight:600;}
+	
+	S.sprite {display:inline-block;background-image:url("letters/ttc.png");width:16px;height:16px;transform:scale(2);margin:2px 5px;}
+	S.g {background-position:0px 0px}
+	S.b {background-position:-16px 0px}
+	S.t {background-position:-32px 0px}
+	S.hh {background-position:-48px 0px}
+	
+	S.h {background-position:0px -16px}
+	S.m {background-position:-16px -16px}
+	S.c {background-position:-32px -16px}
+	S.u {background-position:-48px -16px}
+	
+	S.f {background-position:0px -32px}
+	S.sc {background-position:-16px -32px}
+	S.cc {background-position:-32px -32px}
+	S.rock {background-position:-48px -32px}
+	
+	S.small_chest {background-position:0px -48px}
+	S.ts {background-position:-16px -48px}
+	S.soldier {background-position:-32px -48px}
+	S.flying {background-position:-48px -48px}
+	
+	S.large_chest {background-position:0px -64px}
+	S.mountain {background-position:-16px -64px}
+	
